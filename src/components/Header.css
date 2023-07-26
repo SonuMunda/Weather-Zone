@@ -1,0 +1,27 @@
+header {
+  height: 64px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3); */
+  z-index: 1;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand img {
+  height: 48px;
+}
+.brand h1{
+  color: white;
+}
+.nav-links .list-item .nav-link {
+  margin: 0 10px;
+  text-transform: uppercase;
+  color: white;
+}
+
