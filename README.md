@@ -28,10 +28,12 @@ You can check out the live demo of WeatherZone at [link-to-live-demo](https://we
    git clone https://github.com/your-username/WeatherZone.git
 
 2. Move to directory:
+
    ```cmd
    cd WeatherZone
 
 3. Install Dependencies
+
   ```cmd
   npm install
 
