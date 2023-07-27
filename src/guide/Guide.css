@@ -1,0 +1,20 @@
+.guide-wrapper{
+    height: 45vh;
+    width: 100%;
+    background-color: rgb(30, 3, 36);
+}
+
+.steps-list{
+    list-style: decimal !important;
+    margin: 0 1rem;
+    padding: 1rem;
+}
+
+.guide-text p{
+    padding: 5px 0;
+    text-overflow: wrap;
+}
+
+.text-orange{
+    color: orangered;
+}

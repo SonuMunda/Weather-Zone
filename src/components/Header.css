@@ -1,12 +1,22 @@
+/* Header styles */
 header {
   height: 64px;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  /* box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3); */
   z-index: 1;
+  color: white;
+  background-color: transparent;
 }
+
+/* Styles for the header when it has the "header-dark" class */
+.header-dark {
+  background-color: #1c1c1c;
+  color: orangered;
+}
+
+/* Styles for the brand/logo section */
 .brand {
   display: flex;
   align-items: center;
@@ -16,12 +26,63 @@ header {
 .brand img {
   height: 48px;
 }
-.brand h1{
-  color: white;
-}
+
+/* Styles for the navigation links */
 .nav-links .list-item .nav-link {
   margin: 0 10px;
   text-transform: uppercase;
   color: white;
 }
 
+/* Styles for the navigation links when hovered or active */
+.nav-links .list-item .nav-link:hover,
+.nav-links .list-item .nav-link.active {
+  font-weight: bold;
+  color: orangered;
+}
+
+/* Styles for the hamburger menu icon (visible on smaller screens) */
+.menubar {
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+  display: none;
+}
+
+/* Media query for screens with a maximum width of 554px (e.g., mobile devices) */
+@media screen and (max-width: 554px) {
+  /* Display the hamburger menu icon */
+  .menubar {
+    display: block;
+  }
+
+  /* Styles for the navbar (navigation links container) on smaller screens */
+  .navbar {
+    position: fixed;
+    top: 64px;
+    height: 0px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #1c1c1c;
+    transition: all 0.4s ease-in-out;
+  }
+
+  /* Styles for the navbar when it has the "nav-active" class (visible on click) */
+  .nav-active {
+    height: 132px;
+  }
+
+  /* Styles for the navigation links on smaller screens */
+  .nav-links {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  /* Styles for individual navigation links on smaller screens */
+  .nav-links .list-item .nav-link {
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    padding: 5px;
+  }
+}

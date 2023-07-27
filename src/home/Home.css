@@ -1,0 +1,120 @@
+/* Styles for the main wrapper container */
+.main-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* Background image overlay for the main wrapper */
+.main-wrapper::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4) url("/images/weather-app-bg.jpg") center
+    center/cover no-repeat;
+  background-blend-mode: darken;
+  z-index: -1;
+}
+
+/* Styles for the main content container */
+.main-wrapper .container {
+  width: 80%;
+  margin-top: 65px;
+  color: white;
+  padding: 1rem 0;
+}
+
+/* Styles for city details section */
+.city-details {
+  width: 50%;
+  padding: 0.5rem;
+}
+
+/* Styles for the search input and button */
+.search {
+  position: relative;
+}
+
+.search .search-bar {
+  padding-left: 36px;
+  outline: none;
+  height: 42px;
+  width: 360px;
+  border: none;
+  color: black;
+}
+
+.search-btn {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+}
+
+/* Styles for the weather details section */
+.city-weather-details {
+  width: 360px;
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
+.weather-icon {
+  padding: 0 10px;
+}
+
+/* Styles for the weather details rows and columns */
+.weather-details .details-row {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.weather-details .details-row .details-cols {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  width: 170px;
+  margin: 4px;
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
+.details-row .details-cols i {
+  padding: 1rem;
+}
+
+/* Media query for screens with a maximum width of 950px */
+@media screen and (max-width: 950px) {
+  /* Adjust the container width and weather details rows */
+  .main-wrapper .container {
+    width: 100%;
+  }
+  .weather-details .details-row {
+    width: 100%;
+  }
+
+  /* Adjust the weather details columns width */
+  .weather-details .details-row .details-cols {
+    width: 360px;
+  }
+}
+
+/* Media query for screens with a maximum width of 375px (e.g., mobile devices) */
+@media screen and (max-width: 375px) {
+  /* Adjust the width for search input, city weather details, and weather details columns */
+  .search .search-bar,
+  .city-weather-details,
+  .weather-details .details-row .details-cols {
+    width: 280px;
+  }
+}

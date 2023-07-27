@@ -1,0 +1,18 @@
+.about-wrapper {
+  height: 45vh;
+  width: 100%;
+  background: rgb(1, 1, 73);
+}
+
+.title h1 {
+  font-size: 2rem;
+  text-align: center;
+  color: orangered;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+.about-details .text p{
+    padding: 5px 0;
+}
