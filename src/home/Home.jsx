@@ -86,10 +86,10 @@ const Home = () => {
     const { value } = event.target;
     setCity(value);
   };
-//UseEffect for calling function on load
-//   useEffect(() => {
-//     fetchData(city);
-//   }, []);
+  //UseEffect for calling function on load
+  useEffect(() => {
+    fetchData(city);
+  }, []);
 
   return (
     <main className="main-wrapper center">
