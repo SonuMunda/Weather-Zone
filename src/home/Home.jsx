@@ -31,7 +31,7 @@ const Home = () => {
 
   // Function to fetch data for the given city
   function fetchData(city) {
-    const locationUrl = `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${apiKey}&q=${
+    const locationUrl = `https://dataservice.accuweather.com/locations/v1/cities/search?apikey=${apiKey}&q=${
       city || "Rupnagar,Punjab"
     }`;
 
@@ -49,7 +49,7 @@ const Home = () => {
 
         console.log(data[0].Key); // Log the Key here to ensure it's fetched correctly
 
-        const weatherUrl = `http://dataservice.accuweather.com/currentconditions/v1/${data[0].Key}?apikey=${apiKey}&details=true`;
+        const weatherUrl = `https://dataservice.accuweather.com/currentconditions/v1/${data[0].Key}?apikey=${apiKey}&details=true`;
 
         return fetch(weatherUrl);
       })
