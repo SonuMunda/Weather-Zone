@@ -18,7 +18,7 @@ WeatherZone is a simple weather application that provides real-time weather data
 
 ## Live Demo
 
-You can check out the live demo of WeatherZone at [link-to-live-demo](https://weatherzonesm.netlify.app).
+You can check out the live demo of WeatherZone at [link-to-live-demo](https://smweatherzone.netlify.app).
 
 ## Installation
 
@@ -31,18 +31,22 @@ You can check out the live demo of WeatherZone at [link-to-live-demo](https://we
 
    ```cmd
    cd WeatherZone
-
-3. Install Dependencies
+   
+3. Install Dependencies:
 
   ```cmd
   npm install
+  ```
 
 4. Set up the environment:
-    Add your API Key to `.env` in root directory.
-    VITE_API_KEY=your-accuweather-api-key
+   Add your API Key to `.env` in root directory.
+   VITE_API_KEY=your-accuweather-api-key
 
-5. ```cmd
+5. Start the Application:
+   
+```cmd
     npm start
+```
 
 6. Open your browser and visit http://localhost:5173 to use WeatherZone locally. or the link in your cmd or bash
 
