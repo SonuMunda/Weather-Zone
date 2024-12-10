@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
 import "./Home.css";
+import {
+  MdSearch,
+  MdVisibility,
+  MdWaterDrop,
+  MdWindPower,
+} from "react-icons/md";
+import { FaGaugeHigh } from "react-icons/fa6";
 
 const Home = () => {
   // State to manage the user input for city search
@@ -78,7 +85,6 @@ const Home = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     fetchData(city);
-    setCity("");
   };
 
   // Function to handle input change for city search
@@ -93,30 +99,30 @@ const Home = () => {
 
   return (
     <main className="main-wrapper center">
-      <div className="container center flex-col">
+      <div className="container center flex-col gap-5 mt-10 p-4">
         {/* City search form */}
-        <div className="search">
+        <div className="search center md:mb-10">
           <form onSubmit={handleSubmit}>
-            <div className="form-group">
+            <div className="form-group flex gap-4">
               <input
                 type="text"
-                className="search-bar"
+                className="search-bar rounded-full md:w-96 bg-blue-50"
                 placeholder="Search for a city"
                 name="cityName"
                 value={city}
                 onChange={handleChange}
               />
-              <button type="submit" className="search-btn">
-                <i className="fa-solid fa-magnifying-glass"></i>
+              <button type="submit" className="search-btn bg-blue-50 px-3 rounded-full">
+                <MdSearch size={32} />
               </button>
             </div>
           </form>
         </div>
 
         {/* Weather details section */}
-        <div className="weather-details center flex-col">
+        <div className="weather-details grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* City name, weather type, and temperature */}
-          <div className="city-weather-details">
+          <div className="city-weather-details bg-blue-50 rounded-3xl p-5">
             <div className="city">
               <h1 className=" text-2xl font-bold p-2 my-2">
                 {locationDetails.Name}, {locationDetails.State},
@@ -147,36 +153,36 @@ const Home = () => {
               </p>
             </div>
           </div>
-
-          {/* Weather details row */}
-          <div className="details-row">
+          <div className="grid grid-cols-2 gap-4">
             {/* Humidity */}
-            <div className="details-cols">
-              <i className="fa-solid fa-droplet"></i>
+            <div className="details-cols rounded-3xl bg-blue-50">
+              <div className="icon">
+                <MdWaterDrop size={30} />
+              </div>
               <div className="col-details">
                 <p>Humidity</p>
                 <p>{weatherDetails.humidity}%</p>
               </div>
             </div>
             {/* Visibility */}
-            <div className="details-cols">
-              <i className="fa-solid fa-smog"></i>
+            <div className="details-cols rounded-3xl bg-blue-50">
+              <MdVisibility size={24} />
               <div className="col-details">
                 <p>Visibilty</p>
                 <p>{weatherDetails.visibility}km</p>
               </div>
             </div>
             {/* Wind Speed */}
-            <div className="details-cols">
-              <i className="fa-solid fa-wind"></i>
+            <div className="details-cols rounded-3xl bg-blue-50">
+              <MdWindPower size={24} />
               <div className="col-details">
                 <p>Wind Speed</p>
                 <p>{weatherDetails.windspeed}km/h</p>
               </div>
             </div>
             {/* Wind Pressure */}
-            <div className="details-cols">
-              <i className="fa-solid fa-gauge-high"></i>
+            <div className="details-cols rounded-3xl bg-blue-50">
+              <FaGaugeHigh size={24} />
               <div className="col-details">
                 <p>Wind Pressure</p>
                 <p>{weatherDetails.windpressure}inHg</p>

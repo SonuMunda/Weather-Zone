@@ -5,21 +5,11 @@ const Header = () => {
   //state for toggle nav
   const [navActive, setNavActive] = useState(false);
 
-  //state for header bgcolor change
-  const [isHeaderDark, setHeaderDark] = useState(false);
 
-  //scroll function to update state
-  window.onscroll = function () {
-    if (window.scrollY == 0) {
-      setHeaderDark(false);
-    } else {
-      setHeaderDark(true);
-    }
-  };
 
   return (
     //Header
-    <header className={`header center ${isHeaderDark ? "header-dark" : ""}`}>
+    <header className={`header center bg-white shadow shadow-gray-300`}>
       <div className="container around">
         {/*Brand*/}
         <div className="brand">
@@ -31,7 +21,7 @@ const Header = () => {
         {/*Navbar*/}
         <nav className={`navbar ${navActive ? "nav-active" : ""}`}>
           <ul className="nav-links flex">
-            <li className="list-item">
+            <li className="list-item text-">
               <NavLink
                 to="/"
                 className="nav-link"
@@ -42,7 +32,7 @@ const Header = () => {
                 Home
               </NavLink>
             </li>
-            <li className="list-item">
+            <li className="list-item text-">
               <NavLink
                 to="/about"
                 className="nav-link"
@@ -53,7 +43,7 @@ const Header = () => {
                 About
               </NavLink>
             </li>
-            <li className="list-item">
+            <li className="list-item text-">
               <NavLink
                 to="guide"
                 className="nav-link"
