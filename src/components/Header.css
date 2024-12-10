@@ -6,14 +6,6 @@ header {
   top: 0;
   left: 0;
   z-index: 1;
-  color: white;
-  background-color: transparent;
-}
-
-/* Styles for the header when it has the "header-dark" class */
-.header-dark {
-  background-color: #1c1c1c;
-  color: orangered;
 }
 
 /* Styles for the brand/logo section */
@@ -30,15 +22,13 @@ header {
 /* Styles for the navigation links */
 .nav-links .list-item .nav-link {
   margin: 0 10px;
-  text-transform: uppercase;
-  color: white;
 }
 
 /* Styles for the navigation links when hovered or active */
 .nav-links .list-item .nav-link:hover,
 .nav-links .list-item .nav-link.active {
   font-weight: bold;
-  color: orangered;
+  color: rgb(0, 136, 255);
 }
 
 /* Styles for the hamburger menu icon (visible on smaller screens) */
@@ -64,8 +54,9 @@ header {
     height: 0px;
     width: 100%;
     overflow: hidden;
-    background-color: #1c1c1c;
+    background-color: #ffffff;
     transition: all 0.4s ease-in-out;
+    border-radius: 0 0 2rem 2rem;
   }
 
   /* Styles for the navbar when it has the "nav-active" class (visible on click) */
@@ -82,7 +73,7 @@ header {
   /* Styles for individual navigation links on smaller screens */
   .nav-links .list-item .nav-link {
     display: inline-block;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     padding: 5px;
   }
 }
