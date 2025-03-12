@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Home.css";
 import {
-  MdSearch,
   MdVisibility,
   MdWaterDrop,
   MdWindPower,
@@ -99,22 +98,22 @@ const Home = () => {
 
   return (
     <main className="main-wrapper center">
-      <div className="container center flex-col gap-5 mt-10 p-4">
+      <div className="container max-w-4xl center flex-col gap-5 mt-10 p-4">
         {/* City search form */}
-        <div className="search center md:mb-10">
-          <form onSubmit={handleSubmit}>
+        <div className="search center md:mb-10 w-full">
+          <form onSubmit={handleSubmit} className="search-form w-full">
             <div className="form-group flex gap-4">
               <input
                 type="text"
-                className="search-bar rounded-full md:w-96 bg-blue-50"
+                className="search-bar rounded-full w-96 bg-blue-50 mx-auto"
                 placeholder="Search for a city"
                 name="cityName"
                 value={city}
                 onChange={handleChange}
               />
-              <button type="submit" className="search-btn bg-blue-50 px-3 rounded-full">
+              {/* <button type="submit" className="search-btn bg-blue-50 px-3 rounded-full">
                 <MdSearch size={32} />
-              </button>
+              </button> */}
             </div>
           </form>
         </div>
@@ -135,12 +134,12 @@ const Home = () => {
             <div className="weather-temperature flex align-items-center">
               {/* Weather icon */}
               <img
-                src={`./images/weather-icons/${weatherDetails.Icon}.png`}
-                alt={weatherDetails.Type}
+                src={`./images/weather-icons/${weatherDetails.Icon}.png` || "https://github.com/SonuMunda/Weather-Zone/blob/main/public/images/weather-icons/1.png"}
+                alt={weatherDetails.Type || "Sunny"}
                 className="weather-icon"
               />
               <p className="text-4xl">
-                {weatherDetails.Temperature}
+                {weatherDetails.Temperature || 0}
                 <span>&deg;</span>
                 <span>C</span>
               </p>
@@ -148,7 +147,7 @@ const Home = () => {
             <div className="real-feel m-2 flex align-items-center">
               <h6 className="font-bold">Real Feel</h6>
               <p className="px-2">
-                {weatherDetails.realFeel}
+                {weatherDetails.realFeel || 0}
                 <span>&deg;C</span>
               </p>
             </div>
@@ -161,7 +160,7 @@ const Home = () => {
               </div>
               <div className="col-details">
                 <p>Humidity</p>
-                <p>{weatherDetails.humidity}%</p>
+                <p>{weatherDetails.humidity || 0}%</p>
               </div>
             </div>
             {/* Visibility */}
@@ -169,7 +168,7 @@ const Home = () => {
               <MdVisibility size={24} />
               <div className="col-details">
                 <p>Visibilty</p>
-                <p>{weatherDetails.visibility}km</p>
+                <p>{weatherDetails.visibility || 0}km</p>
               </div>
             </div>
             {/* Wind Speed */}
@@ -177,7 +176,7 @@ const Home = () => {
               <MdWindPower size={24} />
               <div className="col-details">
                 <p>Wind Speed</p>
-                <p>{weatherDetails.windspeed}km/h</p>
+                <p>{weatherDetails.windspeed || 0}km/h</p>
               </div>
             </div>
             {/* Wind Pressure */}
@@ -185,7 +184,7 @@ const Home = () => {
               <FaGaugeHigh size={24} />
               <div className="col-details">
                 <p>Wind Pressure</p>
-                <p>{weatherDetails.windpressure}inHg</p>
+                <p>{weatherDetails.windpressure || 0}inHg</p>
               </div>
             </div>
           </div>
