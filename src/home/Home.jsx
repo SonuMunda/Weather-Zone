@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Home.css";
 import {
+  MdSearch,
   MdVisibility,
   MdWaterDrop,
   MdWindPower,
@@ -83,6 +84,9 @@ const Home = () => {
   // Function to handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (city === "") {
+      alert("Please enter a city name");
+    }
     fetchData(city);
   };
 
@@ -97,29 +101,44 @@ const Home = () => {
   }, []);
 
   return (
-    <main className="main-wrapper center">
-      <div className="container max-w-4xl center flex-col gap-5 mt-10 p-4">
+    <main className="main-wrapper center mt-14 md:m-0">
+      <div className="container max-w-4xl center flex-col gap-5 p-4">
+        {/* Page title */}
+        <h1 className="page-title text-3xl font-bold text-center">
+          Weather Zone
+        </h1>
+
+        <p className="text-gray-700">
+          Get the latest weather details for any city around the world. Enter
+        </p>
+
+
         {/* City search form */}
-        <div className="search center md:mb-10 w-full">
+        <div className="search center w-full">
           <form onSubmit={handleSubmit} className="search-form w-full">
-            <div className="form-group flex gap-4">
+            <div className="form-group relative w-full  mx-auto">
               <input
                 type="text"
-                className="search-bar rounded-full w-96 bg-blue-50 mx-auto"
+                className="search-bar rounded-3xl w-full bg-blue-50 px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 placeholder="Search for a city"
                 name="cityName"
                 value={city}
                 onChange={handleChange}
+                aria-label="Search for a city"
               />
-              {/* <button type="submit" className="search-btn bg-blue-50 px-3 rounded-full">
-                <MdSearch size={32} />
-              </button> */}
+              <button
+                type="submit"
+                className="search-btn p-3 rounded-full absolute top-1/2 right-4 transform -translate-y-1/2 hover:bg-blue-100 transition-all duration-300"
+                aria-label="Search"
+              >
+                <MdSearch size={28} className="text-blue-600" />
+              </button>
             </div>
           </form>
         </div>
 
         {/* Weather details section */}
-        <div className="weather-details grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="weather-details grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
           {/* City name, weather type, and temperature */}
           <div className="city-weather-details bg-blue-50 rounded-3xl p-5">
             <div className="city">
@@ -134,7 +153,10 @@ const Home = () => {
             <div className="weather-temperature flex align-items-center">
               {/* Weather icon */}
               <img
-                src={`./images/weather-icons/${weatherDetails.Icon}.png` || "https://github.com/SonuMunda/Weather-Zone/blob/main/public/images/weather-icons/1.png"}
+                src={
+                  `./images/weather-icons/${weatherDetails.Icon}.png` ||
+                  "https://github.com/SonuMunda/Weather-Zone/blob/main/public/images/weather-icons/1.png"
+                }
                 alt={weatherDetails.Type || "Sunny"}
                 className="weather-icon"
               />
@@ -152,7 +174,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Humidity */}
             <div className="details-cols rounded-3xl bg-blue-50">
               <div className="icon">

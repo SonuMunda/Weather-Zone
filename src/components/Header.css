@@ -1,8 +1,7 @@
 /* Header styles */
 header {
-  height: 64px;
-  width: 100%;
   position: fixed;
+  height: 54px;
   top: 0;
   left: 0;
   z-index: 1;
@@ -50,18 +49,20 @@ header {
   /* Styles for the navbar (navigation links container) on smaller screens */
   .navbar {
     position: fixed;
-    top: 64px;
+    top: 54px;
+    left: 0;
     height: 0px;
     width: 100%;
     overflow: hidden;
     background-color: #ffffff;
     transition: all 0.4s ease-in-out;
-    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   /* Styles for the navbar when it has the "nav-active" class (visible on click) */
   .nav-active {
     height: 132px;
+
   }
 
   /* Styles for the navigation links on smaller screens */
