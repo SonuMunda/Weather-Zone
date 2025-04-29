@@ -9,8 +9,8 @@ const Header = () => {
 
   return (
     //Header
-    <header className={`header center bg-white shadow shadow-gray-300`}>
-      <div className="container around">
+    <header className={`header center bg-white border-b w-full`}>
+      <div className="container between px-4 w-full">
         {/*Brand*/}
         <div className="brand">
           {/*Brand Icon*/}
